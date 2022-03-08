@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import mongodb from "mongodb";
 const eventSchema = mongoose.Schema({
-  image: String,
+  image_url: String,
   title: String,
   description: String,
   start_date: Date,
@@ -14,5 +15,6 @@ const eventSchema = mongoose.Schema({
   coordinator_name: String,
   details: String,
   category: String,
+  registers: [{ type: mongodb.ObjectId }],
 });
 export default mongoose.model("events", eventSchema);
