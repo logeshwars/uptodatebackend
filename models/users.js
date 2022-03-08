@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
 const userSchema = mongoose.Schema({
   name: String,
-  dob: Date,
-  phno: { type: Number },
-  age: { type: Number },
+  dob: String,
+  phno: {type: String},
+  age: String,
+  gender: String,
   college: String,
+  dept: String,
   usertype: String,
   rollno: String,
   mailid: String,
   city: String,
   state: String,
-  country: String,
-  password: String,
   userid: String,
 });
 export default mongoose.model('users',userSchema);
