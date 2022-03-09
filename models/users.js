@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import mongodb from "mongodb";
 const userSchema = mongoose.Schema({
   name: String,
   dob: String,
-  phno: {type: String},
+  phno: { type: String },
   age: String,
   gender: String,
   college: String,
@@ -13,5 +14,6 @@ const userSchema = mongoose.Schema({
   city: String,
   state: String,
   userid: String,
+  events: [{ type: mongodb.ObjectId }],
 });
 export default mongoose.model('users',userSchema);
