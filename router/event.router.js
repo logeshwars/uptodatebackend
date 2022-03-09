@@ -7,5 +7,5 @@ import { register } from "../controllers/register.controller.js";
 router.post("/createevent", createEvent);
 router.get("/getevent", getEvent);
 router.get("/geteventbyid", getEventById);
-router.post("/register", getEventById);
+router.post("/register", register);
 export default router;
