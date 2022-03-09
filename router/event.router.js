@@ -6,4 +6,5 @@ import { getEventById } from "../controllers/geteventbyid.controller.js";
 router.post("/createevent", createEvent);
 router.get("/getevent", getEvent);
 router.get("/geteventbyid", getEventById);
+router.post("/register", getEventById);
 export default router;
