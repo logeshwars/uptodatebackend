@@ -1,20 +1,25 @@
 import mongoose from "mongoose";
-import mongodb from "mongodb";
 const eventSchema = mongoose.Schema({
   image_url: String,
   title: String,
   description: String,
   start_date: String,
   end_date: String,
-  clg_name: String,
-  location: String,
-  venue: String,
   time: String,
   duration: String,
   google_form_link: String,
   coordinator_name: String,
   details: String,
   category: String,
-  registers: [{ type: mongodb.ObjectId }],
+  registers: [String],
+  guest_name: String,
+  guest_organisation: String,
+  guest_field: String,
+  guest_exp: String,
+  guest_email: String,
+  hallid: String,
+  rating: [Number],
+  feedback: [{}],
+  ended: Boolean,
 });
 export default mongoose.model("events", eventSchema);

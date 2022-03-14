@@ -2,6 +2,8 @@ import express from "express";
 import Cors from 'cors';
 import user from "./router/user.js"
 import event from "./router/event.router.js";
+import mail from "./router/mailsender.router.js";
+import hall from "./router/hall.router.js";
 import mongoose from "mongoose";
 const app = express();
 const port = process.env.PORT || 9000;
@@ -24,6 +26,8 @@ app.get("/", (req, res) => {
 });
 app.use("/user", user);
 app.use("/event", event);
+app.use("/mail", mail);
+app.use("/hall", hall);
 app.listen(port, () => {
   console.log(`App listening on port ${port}! `);
 });

@@ -7,7 +7,7 @@ export const register = (req, res) => {
     { $push: { registers: data.uid } },
     { safe: true, upsert: true },
     (err, data) => {
-      if (err) res.status(500).send("Registeration Unsuccessful");
+      if (err) res.status(500).send(err);
       else {
         userdb.updateOne(
           { _id: data.uid },

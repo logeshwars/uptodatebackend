@@ -1,0 +1,13 @@
+import express from "express";
+const router = express.Router();
+import { bookHall } from "../controllers/bookhall.controller.js";
+import { createHall } from "../controllers/createhall.controller.js";
+import { deleteHall } from "../controllers/deletehall.controller.js";
+import { modifyHall } from "../controllers/modifyhall.controller.js";
+import { getAvailHall } from "../controllers/getavailhall.controller.js";
+router.post("/createhall", createHall);
+router.post("/modifyhall", modifyHall);
+router.get("/getavailhall", getAvailHall);
+router.post("/bookhall", bookHall);
+router.post("/removehall", deleteHall);
+export default router;

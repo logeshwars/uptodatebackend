@@ -14,6 +14,6 @@ const userSchema = mongoose.Schema({
   city: String,
   state: String,
   userid: String,
-  events: [{ type: mongodb.ObjectId }],
+  events: [String],
 });
 export default mongoose.model('users',userSchema);
