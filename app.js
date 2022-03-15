@@ -4,6 +4,11 @@ import user from "./router/user.js"
 import event from "./router/event.router.js";
 import mail from "./router/mailsender.router.js";
 import hall from "./router/hall.router.js";
+import swaggerUi from "swagger-ui-express";
+import { readFile } from "fs/promises";
+const swaggerDocument = JSON.parse(
+  await readFile(new URL("./swagger.json", import.meta.url))
+);
 import mongoose from "mongoose";
 const app = express();
 const port = process.env.PORT || 9000;
@@ -28,6 +33,7 @@ app.use("/user", user);
 app.use("/event", event);
 app.use("/mail", mail);
 app.use("/hall", hall);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.listen(port, () => {
   console.log(`App listening on port ${port}! `);
 });
