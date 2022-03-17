@@ -49,7 +49,6 @@ const sendMail = (req, res) => {
         });
     }
   });
-
   res.send("sucess");
 };
 export default sendMail;
