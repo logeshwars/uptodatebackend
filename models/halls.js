@@ -8,7 +8,6 @@ const hallSchema = mongoose.Schema({
   capcity: Number,
   clg_name: String,
   location: String,
-  venue: String,
   facility: String,
 });
 export default mongoose.model("halls", hallSchema);
