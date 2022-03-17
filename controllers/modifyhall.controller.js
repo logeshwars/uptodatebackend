@@ -12,7 +12,6 @@ export const modifyHall = (req, res) => {
       $set: { capcity: data.capcity },
       $set: { facility: data.facility },
       $set: { clg_name: data.clg_name },
-      $set: { venue: data.venue },
       $set: { location: data.location },
       $set: { hallid: data.hallid },
     },
