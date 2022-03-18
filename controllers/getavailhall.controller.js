@@ -1,7 +1,6 @@
 import halldb from "../models/halls.js";
 export const getAvailHall = (req, res) => {
-  const data = req.query;
-  halldb.find({ $lt: { bookedDate: data.currentdate } }, (err, data) => {
+  halldb.find({ $lt: { bookedDate: new Date.now() } }, (err, data) => {
     if (err) res.status(500).send(err);
     else {
       if (data.length > 0) res.status(201).send(data);
