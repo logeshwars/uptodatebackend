@@ -20,6 +20,7 @@ const eventSchema = mongoose.Schema({
   hallid: String,
   rating: [Number],
   feedback: [{}],
+  committe_id: String,
   ended: Boolean,
 });
 export default mongoose.model("events", eventSchema);
